@@ -1,1 +1,5 @@
-fastapi[all]
+fastapi
+uvicorn
+motor
+python-multipart
+aiofiles
