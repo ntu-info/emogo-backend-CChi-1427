@@ -14,13 +14,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# --- 資料庫連線設定 ---
-# 在 Render 的 Environment Variables 設定 MONGODB_URL
-# 或者暫時將您的連線字串貼在這裡 (不建議提交到 GitHub)
-MONGO_URL = os.getenv("MONGODB_URL", "您的_MongoDB_連線字串_mongodb+srv://...")
-client = AsyncIOMotorClient(MONGO_URL)
-db = client["EmoGo_Database"] # 您可以自訂資料庫名稱
-
 @app.get("/")
 async def root():
     return {"message": "EmoGo Backend is Running!"}
